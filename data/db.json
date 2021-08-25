@@ -1,0 +1,22 @@
+{
+  "notes": [
+    {
+      "title": "Yoshi's birthday bash",
+      "category": "daily",
+      "timerCategory": "auto",
+      "id": 1
+    },
+    {
+      "title": "Complete my ninja training",
+      "category": "once",
+      "timerCategory": "auto",
+      "id": 2
+    },
+    {
+      "title": "Order a pizza!",
+      "category": "daily",
+      "timerCategory": "manual",
+      "id": 3
+    }
+  ]
+}
