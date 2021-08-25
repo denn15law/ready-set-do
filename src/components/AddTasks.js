@@ -79,8 +79,8 @@ export const AddTasks = () => {
                     <FormLabel>Repeat Task</FormLabel>
 
                     <RadioGroup value = {category} onChange = {(e) => setCategory(e.target.value)}>
-                        <FormControlLabel value='daily' control = {<Radio/>} label = 'Daily'/>
-                        <FormControlLabel value='once' control = {<Radio/>} label = 'No Repeat'/>
+                        <FormControlLabel value='Everyday Task' control = {<Radio/>} label = 'Daily'/>
+                        <FormControlLabel value='Today Specific Task' control = {<Radio/>} label = 'No Repeat'/>
                     </RadioGroup>
 
                     <FormLabel>Timer Settings</FormLabel>

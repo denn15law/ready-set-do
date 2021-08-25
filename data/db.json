@@ -13,9 +13,9 @@
       "id": 2
     },
     {
-      "title": "Order a pizza!",
-      "category": "daily",
-      "timerCategory": "manual",
+      "title": "Mow the Lawn",
+      "category": "Today Specific Task",
+      "timerCategory": "auto",
       "id": 3
     }
   ]

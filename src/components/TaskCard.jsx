@@ -1,4 +1,4 @@
-import { Card, CardActions, CardHeader, IconButton, makeStyles } from '@material-ui/core'
+import { Card, CardActions, CardContent, CardHeader, IconButton, makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
 import {DeleteOutlined, Edit} from '@material-ui/icons'
 
@@ -6,9 +6,14 @@ const useStyles = makeStyles({
     test:{
         backgroundColor: (note) =>{
             if (note.category == 'daily'){
-                return '#34eb52'
+                return '#ebe834'
             }
         }
+    },
+    flex:{
+        display: 'flex',
+        justifyContent: 'space-between'
+
     }
 })
 
@@ -22,17 +27,26 @@ export const TaskCard = ({note, handleDelete}) => {
                 className = {classes.test}>
                 <CardHeader
                     action = {
-                        <IconButton onClick = {() => handleDelete(note.id)}>
-                            <DeleteOutlined/>
+                        <IconButton>
+                            <Edit/>
                         </IconButton>
                     }
                     title = {note.title}
+                    subheader = {note.category}
                 />
-                <CardActions>
-                    <IconButton>
-                        <Edit/>
-                    </IconButton>
-                </CardActions>
+                <div className = {classes.flex}>
+
+                    <CardContent>
+                        <Typography>
+                            Timer
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <IconButton onClick = {() => handleDelete(note.id)}>
+                            <DeleteOutlined/>
+                        </IconButton>
+                    </CardActions>
+                </div>
                 
             </Card>
         </div>
