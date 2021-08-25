@@ -1,6 +1,6 @@
-import { Card, CardHeader, IconButton, makeStyles } from '@material-ui/core'
+import { Card, CardActions, CardHeader, IconButton, makeStyles } from '@material-ui/core'
 import React from 'react'
-import {DeleteOutlined} from '@material-ui/icons'
+import {DeleteOutlined, Edit} from '@material-ui/icons'
 
 const useStyles = makeStyles({
     test:{
@@ -28,6 +28,11 @@ export const TaskCard = ({note, handleDelete}) => {
                     }
                     title = {note.title}
                 />
+                <CardActions>
+                    <IconButton>
+                        <Edit/>
+                    </IconButton>
+                </CardActions>
                 
             </Card>
         </div>
