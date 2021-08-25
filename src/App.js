@@ -13,11 +13,9 @@ function App() {
       <Layout>
         <Switch>
           <Route exact path="/">
-          
             <TaskList/>
           </Route>
           <Route exact path="/addTask">
-            
             <AddTasks/>
           </Route>
         </Switch>
