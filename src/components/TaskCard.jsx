@@ -38,7 +38,7 @@ export const TaskCard = ({note, handleDelete}) => {
                 <div className = {classes.flex}>
 
                     <CardContent>
-                        <Timer/>
+                        <Timer note = {note}/>
                     </CardContent>
                     <CardActions>
                         <IconButton onClick = {() => handleDelete(note.id)}>

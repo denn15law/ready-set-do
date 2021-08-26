@@ -74,7 +74,8 @@ export default function Timer() {
             </Button>
             <Button
             variant = 'contained'
-            onClick = {() => stop()}>
+            onClick = {() => stop()
+            }>
                 Task Complete
             </Button>
 

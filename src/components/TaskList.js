@@ -3,6 +3,7 @@ import { Grid, makeStyles, Typography } from '@material-ui/core'
 
 import { Container } from '@material-ui/core'
 import { TaskCard } from './TaskCard'
+import CurrentTime from './CurrentTime'
 
 
 
@@ -18,6 +19,10 @@ const useStyles = makeStyles({
     block: {
         display: 'block',
         marginTop: 10
+    },
+    heading: {
+        display: 'flex',
+        justifyContent: 'space-between'
     }
 })
 
@@ -43,9 +48,12 @@ const TaskList = () => {
     
     return (
         <Container>
-            <Typography variant = 'h4' color = 'primary' className = {classes.my}>
-                Today's Tasks
-            </Typography>
+            <div className = {classes.heading} >
+                <Typography variant = 'h4' color = 'primary' className = {classes.my}>
+                    Today's Tasks
+                </Typography>
+                <CurrentTime/>
+            </div>
             <Grid container spacing = {3}>
             {notes.map(note => (
                 <Grid item key = {note.id} xs={12}>
