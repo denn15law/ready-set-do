@@ -20,8 +20,35 @@ export default function Timer() {
         m: 0,
         h: 0
     })
+
+    const [interv, setInterv] = useState()
     
-    const [runTime, setRunTime] = useState(false)
+    const start = () =>{
+        run()
+        setInterv(setInterval(run, 1000))
+    }
+    const stop = () => {
+        clearInterval(interv)
+    }
+
+    var updatedS = time.s, updatedM = time.m, updatedH = time.h
+
+    const run = () =>{
+        if (updatedM === 60){
+            updatedH++
+            updatedM = 0
+        }
+        if (updatedS === 60){
+            updatedM++
+            updatedS = 0
+        }
+        updatedS++
+        return setTime({
+            s: updatedS,
+            m: updatedM,
+            h: updatedH
+        })
+    }
     
     return (
         <>
@@ -31,9 +58,10 @@ export default function Timer() {
             className = {classes.bg}>
                 <div className = {classes.timer}>
                     <Typography
-                        variant = 'h5'
-                        >
-                        {time.h}:{time.m}:{time.s}
+                        variant = 'h5'>
+                        <span>{(time.h >= 10) ? time.h : "0"+time.h}:</span>
+                        <span>{(time.m >= 10) ? time.m : "0"+time.m}:</span>
+                        <span>{(time.s >= 10) ? time.s : "0"+time.s}</span>
                     </Typography>
                     
                 </div>
@@ -41,12 +69,12 @@ export default function Timer() {
         <ButtonGroup>
             <Button
             variant = 'contained'
-            onClick = {() => setRunTime(true)}>
+            onClick = {() => start()}>
                 Start
             </Button>
             <Button
             variant = 'contained'
-            onClick = {() => setRunTime(false)}>
+            onClick = {() => stop()}>
                 Task Complete
             </Button>
 
