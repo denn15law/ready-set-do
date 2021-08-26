@@ -75,7 +75,6 @@ export default function Layout({children}) {
     
     const history = useHistory()
     const classes = useStyles()
-    const theme = useTheme()
     const [open, setOpen] = useState(false)
 
     const handleDrawerOpen = () => {
