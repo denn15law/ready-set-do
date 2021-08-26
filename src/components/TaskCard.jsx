@@ -32,11 +32,6 @@ export const TaskCard = ({note, handleDelete}) => {
             <Card elevation= {2}
                 className = {classes.test}>
                 <CardHeader
-                    action = {
-                        <IconButton>
-                            <Edit/>
-                        </IconButton>
-                    }
                     title = {note.title}
                     subheader = {note.category}
                 />
