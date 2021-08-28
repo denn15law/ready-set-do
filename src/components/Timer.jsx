@@ -29,6 +29,7 @@ export default function Timer() {
     }
     const stop = () => {
         clearInterval(interv)
+        console.log('time stopped')
     }
 
     var updatedS = time.s, updatedM = time.m, updatedH = time.h

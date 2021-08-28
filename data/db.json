@@ -1,12 +1,6 @@
 {
   "notes": [
     {
-      "title": "Yoshi's birthday bash",
-      "category": "Everyday Task",
-      "timerCategory": "auto",
-      "id": 1
-    },
-    {
       "title": "Mow the Lawn",
       "category": "Today Specific Task",
       "timerCategory": "auto",
@@ -17,6 +11,12 @@
       "category": "Today Specific Task",
       "timerCategory": "manual",
       "id": 4
+    },
+    {
+      "title": "test",
+      "category": "Everyday Task",
+      "timerCategory": "auto",
+      "id": 5
     }
   ]
 }
