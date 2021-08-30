@@ -17,6 +17,9 @@ function App() {
           <Route exact path="/addTask">
             <AddTasks/>
           </Route>
+          <Route exact path="/addWork">
+            <AddTasks/>
+          </Route>
         </Switch>
       </Layout>
     </Router>

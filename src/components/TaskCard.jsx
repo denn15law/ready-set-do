@@ -1,17 +1,17 @@
-import { Card, CardActions, CardContent, CardHeader, IconButton, makeStyles, Typography } from '@material-ui/core'
+import { Card, CardActions, CardContent, CardHeader, IconButton, makeStyles } from '@material-ui/core'
 import React from 'react'
-import {DeleteOutlined, Edit} from '@material-ui/icons'
+import {DeleteOutlined} from '@material-ui/icons'
 import Timer from './Timer'
 
 const useStyles = makeStyles({
     test:{
         backgroundColor: (note) =>{
-            if (note.category == 'Everyday Task'){
+            if (note.category === 'Everyday Task'){
                 return '#ebe834'
             }
         },
         border: (note) =>{
-            if (note.category == 'Today Specific Task'){
+            if (note.category === 'Today Specific Task'){
                 return '1px solid red'
             }
         }
@@ -26,6 +26,10 @@ const useStyles = makeStyles({
 export const TaskCard = ({note, handleDelete}) => {
 
     const classes = useStyles(note)
+    
+    const handleTaskStatus = () => {
+       console.log('test')
+    }
 
     return (
         <div>
@@ -38,7 +42,7 @@ export const TaskCard = ({note, handleDelete}) => {
                 <div className = {classes.flex}>
 
                     <CardContent>
-                        <Timer note = {note}/>
+                        <Timer note = {note} handleTaskStatus = {handleTaskStatus}/>
                     </CardContent>
                     <CardActions>
                         <IconButton onClick = {() => handleDelete(note.id)}>

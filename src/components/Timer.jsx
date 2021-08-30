@@ -3,15 +3,13 @@ import React, { useState } from 'react'
 
 
 const useStyles = makeStyles({
-    bg: {
-        backgroundColor: '#53eb34'
-    },
+
     timer:{
         display: 'flex',
         justifyContent: 'center'
     }
 })
-export default function Timer() {
+export default function Timer({note, handleTaskStatus}) {
     
     const classes = useStyles()
 
@@ -29,7 +27,6 @@ export default function Timer() {
     }
     const stop = () => {
         clearInterval(interv)
-        console.log('time stopped')
     }
 
     var updatedS = time.s, updatedM = time.m, updatedH = time.h
@@ -56,7 +53,7 @@ export default function Timer() {
         <Paper 
             variant= 'outlined'
             elevation = {2}
-            className = {classes.bg}>
+            >
                 <div className = {classes.timer}>
                     <Typography
                         variant = 'h5'>
@@ -75,12 +72,16 @@ export default function Timer() {
             </Button>
             <Button
             variant = 'contained'
-            onClick = {() => stop()
-            }>
+            onClick = {() => stop()}>
+                Stop
+            </Button>
+            <Button
+            variant = 'contained'
+            onClick = {() => handleTaskStatus()}>
                 Task Complete
             </Button>
-
         </ButtonGroup>
+        
         </>
     )
 }
